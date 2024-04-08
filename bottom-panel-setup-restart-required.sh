@@ -1,5 +1,25 @@
 #!/bin/bash
 
+# Function to check if required packages are installed
+check_command() {
+	if ! command -v $1 &> /dev/null; then
+		echo "'$1' command is not installed."
+		check=failed
+	fi
+}
+
+# Check for gnome-extensions, curl, and wget
+check_command gnome-extensions
+check_command curl
+check_command wget
+
+# Exit the script if required packages are not installed
+if [[ "$check" == "failed" ]]; then
+	echo
+	echo "please install required packages before running this script."
+	exit 1
+fi
+
 # Install desired GNOME Extensions with gnome-extensions
 echo 'installing desired gnome extensions w/ gnome-extensions...'
 
