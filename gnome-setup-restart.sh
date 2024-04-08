@@ -55,24 +55,60 @@ dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.
 # Create Config Directory (if it doesn't already exist)
 mkdir -p $HOME/.config
 
+# Get the users preferred panel position
+if [[ "$1" == "top" || "$1" == "bottom" ]]; then
+	position="$1"
+else
+	while :; do
+		read -p "Panel on top or bottom? (top/bottom): " position
+
+		position=$(echo "$position" | tr '[:upper:]' '[:lower:]')
+
+		if [[ "$position" == "top" || "$position" == "bottom" ]]; then
+			break
+		else
+			echo "Invalid input... please enter top or bottom."
+		fi
+	done
+fi
+
 # Dash to Panel Customizations
 echo 'customizing dash to panel...'
-tee $HOME/.config/dash-to-panel 1> /dev/null <<- 'EOF'
-	[/]
-	appicon-margin=0
-	appicon-padding=10
-	dot-position='BOTTOM'
-	hide-overview-on-startup=true
-	isolate-workspaces=true
-	multi-monitors=false
-	panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
-	panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
-	panel-lengths='{"0":100,"1":100}'
-	panel-positions='{"0":"BOTTOM","1":"BOTTOM"}'
-	panel-sizes='{"0":40,"1":40}'
-	trans-use-custom-opacity=false
-	trans-use-dynamic-opacity=false
-EOF
+if [[ "$position" == "top" ]]; then
+	tee $HOME/.config/dash-to-panel 1> /dev/null <<- '	EOF'
+		[/]
+		appicon-margin=4
+		appicon-padding=4
+		dot-position='TOP'
+		hide-overview-on-startup=true
+		isolate-workspaces=true
+		multi-monitors=false
+		panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
+		panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+		panel-lengths='{"0":100,"1":100}'
+		panel-positions='{"0":"TOP","1":"TOP"}'
+		panel-sizes='{"0":24,"1":24}'
+		trans-use-custom-opacity=true
+		trans-use-dynamic-opacity=true
+	EOF
+elif [[ "$position" == "bottom" ]]; then
+	tee $HOME/.config/dash-to-panel 1> /dev/null <<- '	EOF'
+		[/]
+		appicon-margin=0
+		appicon-padding=10
+		dot-position='BOTTOM'
+		hide-overview-on-startup=true
+		isolate-workspaces=true
+		multi-monitors=false
+		panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
+		panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}'
+		panel-lengths='{"0":100,"1":100}'
+		panel-positions='{"0":"BOTTOM","1":"BOTTOM"}'
+		panel-sizes='{"0":40,"1":40}'
+		trans-use-custom-opacity=false
+		trans-use-dynamic-opacity=false
+	EOF
+fi
 dconf load /org/gnome/shell/extensions/dash-to-panel/ < $HOME/.config/dash-to-panel
 
 # Custom Tweaks (via gsettings)
