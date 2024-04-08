@@ -16,7 +16,7 @@ EXT_LIST=(
 	)
 
 for i in "${EXT_LIST[@]}"; do
-	busctl --user call org.gnome.Shell.Extensions /org/gnome/Shell/Extensions org.gnome.Shell.Extensions InstallRemoteExtension s ${i}
+	busctl --expect-reply=no --allow-interactive-authorization=no --user call org.gnome.Shell.Extensions /org/gnome/Shell/Extensions org.gnome.Shell.Extensions InstallRemoteExtension s ${i}
 done
 
 # Create Config Directory (if it doesn't already exist)
