@@ -20,7 +20,7 @@ if [[ "$check" == "failed" ]]; then
 	exit 1
 fi
 
-# Install desired GNOME Extensions with gnome-extensions
+# Install and enable desired GNOME Extensions with gnome-extensions
 echo 'installing desired gnome extensions w/ gnome-extensions...'
 
 EXT_LIST=(
@@ -41,6 +41,7 @@ for i in "${EXT_LIST[@]}"; do
 	wget -O "${i}".zip "https://extensions.gnome.org/download-extension/${i}.shell-extension.zip?version_tag=$VERSION_TAG"
 	gnome-extensions install --force "${i}".zip
 	rm -f ${i}.zip
+	gnome-extensions enable "${i}"
 done
 
 # Create Config Directory (if it doesn't already exist)
