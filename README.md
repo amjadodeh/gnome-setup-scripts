@@ -15,17 +15,17 @@ NOTE: This requires curl to run
 
 To execute one of the scripts directly with a single command, run either of the following commands in your terminal:
 
-**For gnome-setup-interactive.sh:**
+**gnome-setup-interactive.sh:**
 ```bash
 bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-interactive.sh)
 ```
 
-**For gnome-setup-restart.sh:**
+**gnome-setup-restart.sh:**
 ```bash
 bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-restart.sh)
 ```
 
-## What it actually does?
+## What does it actually do?
 
 In short, the scripts install and enable the following GNOME extensions:
 
@@ -37,7 +37,7 @@ In short, the scripts install and enable the following GNOME extensions:
 - [Legacy (GTK3) Theme Scheme Auto Switcher](https://extensions.gnome.org/extension/4998/legacy-gtk3-theme-scheme-auto-switcher/)
 - [Overview Background](https://extensions.gnome.org/extension/5856/overview-background/)
 
-The scripts also use the 'top' or 'bottom' options to determine the panel's position without prompting the user. If either of these options is specified, the panel is set to the chosen position. If neither is specified, the script will prompt the user to choose the preferred panel position.
+The scripts accept either 'top' or 'bottom' as the first argument to determine the panel's position. If either of these options is specified, the panel is set to the chosen position. If neither is specified, the script will prompt the user to choose the preferred panel position.
 
 Finally, the scripts configure and make some additional tweaks by writing to files, and by using gsettings and dconf.
 
