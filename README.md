@@ -11,6 +11,8 @@ This repo contains scripts to automatically set up GNOME with my preferred look 
 
 ## Quick Setup
 
+NOTE: This requires curl to run (obviously)
+
 To execute one of the scripts directly with a single command, run either of the following commands in your terminal:
 
 **For gnome-setup-interactive.sh:**
@@ -22,8 +24,6 @@ bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/
 ```bash
 bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-restart.sh)
 ```
-
-NOTE: This requires curl to run (obviously)
 
 ## What it actually does?
 
