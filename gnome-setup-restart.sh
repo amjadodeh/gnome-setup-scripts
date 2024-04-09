@@ -3,7 +3,7 @@
 # Function to check if required packages are installed
 check_command() {
 	if ! command -v $1 &> /dev/null; then
-		echo "'$1' command is not installed."
+		echo "$1 command is not installed."
 		check=failed
 	fi
 }
@@ -12,6 +12,7 @@ check_command() {
 check_command gnome-extensions
 check_command curl
 check_command wget
+check_command jq
 
 # Exit the script if required packages are not installed
 if [[ "$check" == "failed" ]]; then
