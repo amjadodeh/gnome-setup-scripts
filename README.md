@@ -3,11 +3,27 @@
 
 This repo contains scripts to automatically set up GNOME with my preferred look and feel. There are two variations of the script available to cater to different setup preferences.
 
-## Variations
+## Script Variations
 
 1. **gnome-setup-interactive.sh**: This version of the script requires user interaction to confirm the installation of each extension using a message-dialog. Ideal for users who prefer to complete the setup quickly without needing to restart GNOME shell.
 
 2. **gnome-setup-restart.sh**: This version automates the entire setup process without needing user input for each extension but requires restarting the GNOME shell (for Wayland: logout/login; for Xorg: Alt+F2 r) or rebooting to complete the setup. Ideal for users looking for a more streamlined setup experience, especially when setting up a new Linux distribution, as it allows for the bundling of app installations and updates with a single system restart to finalize the configuration.
+
+## Quick Setup
+
+To execute one of the scripts directly with a single command, run either of the following commands in your terminal:
+
+**For gnome-setup-interactive.sh:**
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-interactive.sh)
+```
+
+**For gnome-setup-restart.sh:**
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-restart.sh)
+```
+
+NOTE: This requires curl to run (obviously)
 
 ## What it actually does?
 
