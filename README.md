@@ -1,5 +1,5 @@
 
-# [gnome-setup-scripts](https://github.com/amjadodeh/gnome-setup-scripts)
+# gnome setup scripts
 
 This repo contains scripts to automatically set up GNOME with my preferred look and feel. There are two variations of the script available to cater to different setup preferences.
 
