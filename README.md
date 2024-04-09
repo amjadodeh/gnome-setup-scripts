@@ -11,7 +11,7 @@ This repo contains scripts to automatically set up GNOME with my preferred look 
 
 ## Quick Setup
 
-NOTE: This requires curl to run (obviously)
+NOTE: This requires curl to run
 
 To execute one of the scripts directly with a single command, run either of the following commands in your terminal:
 
