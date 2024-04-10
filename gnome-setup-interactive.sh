@@ -78,6 +78,41 @@ elif [[ "$position" == "bottom" ]]; then
 fi
 dconf load /org/gnome/shell/extensions/dash-to-panel/ < $HOME/.config/dash-to-panel
 
+# Terminator Config
+if command -v terminator &> /dev/null; then
+	echo 'setting up terminator config...'
+	mkdir -p $HOME/.config/terminator
+	tee $HOME/.config/terminator/config 1> /dev/null <<- '	EOF'
+		[global_config]
+		  focus = system
+		  borderless = True
+
+		[keybindings]
+		  #full_screen = <Ctrl><Shift>F11
+
+		[profiles]
+		  [[default]]
+		    show_titlebar = False
+		    scrollbar_position = hidden
+		    #font = Fixed 10
+		    #background_color = "#000000" # A comment
+		    #foreground_color = "#FFFFFF" # Note that hex colour values must be quoted
+		    scrollback_lines = "3000" #More comment. Single quotes are valid too
+		    #cursor_blink = True
+		    #custom_command = "echo \"foo#bar\"" #Final comment - this will work as expected.
+		    ##exit_action = restart
+		[layouts]
+		  [[default]]
+		    [[[window0]]]
+		      type = Window
+		      parent = ""
+		    [[[child1]]]
+		      type = Terminal
+		      parent = window0
+		      profile = default
+	EOF
+fi
+
 # Custom Tweaks (via gsettings)
 echo 'setting up some custom tweaks (via gsettings)...'
 gsettings set org.gnome.desktop.privacy disable-camera true
