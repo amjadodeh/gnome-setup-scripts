@@ -119,7 +119,7 @@ if command -v terminator &> /dev/null; then
 	tee $HOME/.config/terminator/config 1> /dev/null <<- '	EOF'
 		[global_config]
 		  focus = system
-		  borderless = True
+		  #borderless = True
 
 		[keybindings]
 		  #full_screen = <Ctrl><Shift>F11
@@ -129,12 +129,12 @@ if command -v terminator &> /dev/null; then
 		    show_titlebar = False
 		    scrollbar_position = hidden
 		    #font = Fixed 10
-		    #background_color = "#000000" # A comment
-		    #foreground_color = "#FFFFFF" # Note that hex colour values must be quoted
-		    scrollback_lines = "3000" #More comment. Single quotes are valid too
+		    #background_color = "#000000"
+		    #foreground_color = "#FFFFFF"
+		    scrollback_lines = "3000"
 		    #cursor_blink = True
-		    #custom_command = "echo \"foo#bar\"" #Final comment - this will work as expected.
-		    ##exit_action = restart
+		    #custom_command = "echo \"foo#bar\""
+		    #exit_action = restart
 		[layouts]
 		  [[default]]
 		    [[[window0]]]
