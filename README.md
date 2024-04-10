@@ -13,16 +13,32 @@ This repo contains scripts to automatically set up GNOME with my preferred look 
 
 NOTE: This requires curl to run
 
-To execute one of the scripts directly with a single command, run either of the following commands in your terminal:
+To execute one of the scripts with a single command, select one of the following commands based on your preference and whether you want the panel at the top or the bottom of the screen, and execute it in your terminal.
 
-**gnome-setup-interactive.sh:**
+### gnome-setup-interactive.sh
+
+Use this script if you prefer to interactively confirm each step of the setup process. Specify 'top' or 'bottom' to set the panel's position without a prompt:
+
+**For a top panel:**
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-interactive.sh)
+bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-interactive.sh) top
+```
+**For a bottom panel:**
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-interactive.sh) bottom
 ```
 
-**gnome-setup-restart.sh:**
+### gnome-setup-restart.sh
+
+Use this script for a non-interactive setup that requires a GNOME shell restart (for Wayland: logout/login; for Xorg: Alt+F2 r). Like with the interactive script, specify 'top' or 'bottom' to set the panel's position:
+
+**For a top panel:**
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-restart.sh)
+bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-restart.sh) top
+```
+**For a bottom panel:**
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/master/gnome-setup-restart.sh) bottom
 ```
 
 ## What does it actually do?
