@@ -30,7 +30,7 @@ bash <(curl -sL https://raw.githubusercontent.com/amjadodeh/gnome-setup-scripts/
 
 ### gnome-setup-restart.sh
 
-Use this script for a non-interactive setup that requires a GNOME shell restart (for Wayland: logout/login; for Xorg: Alt+F2 r). Like with the interactive script, specify 'top' or 'bottom' to set the panel's position:
+Use this script for a non-interactive setup that requires a GNOME shell restart (for Wayland: logout/login; for Xorg: Alt+F2 r) or a reboot. Like with the interactive script, specify 'top' or 'bottom' to set the panel's position:
 
 **For a top panel:**
 ```bash
