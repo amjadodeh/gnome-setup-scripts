@@ -13,7 +13,7 @@ This repo contains scripts to automatically set up GNOME with my preferred look 
 
 NOTE: This requires curl to run
 
-To execute one of the scripts with a single command, select one of the following commands based on your preference and whether you want the panel at the top or the bottom of the screen, and execute it in your terminal.
+To execute one of the scripts with a single command, select one of the following commands based on your preference and whether you want the panel at the top or the bottom of the screen, and run it in your terminal.
 
 ### gnome-setup-interactive.sh
 
