@@ -57,3 +57,13 @@ The scripts accept either 'top' or 'bottom' as the first argument to determine t
 
 Finally, the scripts configure and make some additional tweaks by writing to files, and by using gsettings and dconf.
 
+## Screenshots
+
+Top Panel Setup:
+
+![top panel setup](screenshots/top-panel-setup.png)
+
+Bottom Panel Setup:
+
+![bottom panel setup](screenshots/bottom-panel-setup.png)
+
