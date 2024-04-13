@@ -149,6 +149,7 @@ fi
 
 # Custom Tweaks (via gsettings)
 echo 'setting up some custom tweaks (via gsettings)...'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.privacy disable-camera true
 gsettings set org.gnome.desktop.privacy old-files-age 'uint32 30'
 gsettings set org.gnome.desktop.privacy recent-files-max-age -1
