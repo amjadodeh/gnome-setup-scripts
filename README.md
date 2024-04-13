@@ -62,12 +62,15 @@ Finally, the scripts configure and make some additional tweaks by writing to fil
 Top Panel Setup:
 
 ![top panel setup](screenshots/top-panel-setup.png)
+
 ![top panel setup no tiling](screenshots/top-panel-setup-no-tiling.png)
+
 ![top panel setup tiling](screenshots/top-panel-setup-tiling.png)
 
 Bottom Panel Setup:
 
 ![bottom panel setup](screenshots/bottom-panel-setup.png)
-![bottom panel setup no tiling](screenshots/bottom-panel-setup-no-tiling.png)
-![bottom panel setup tiling](screenshots/bottom-panel-setup-tiling.png)
 
+![bottom panel setup no tiling](screenshots/bottom-panel-setup-no-tiling.png)
+
+![bottom panel setup tiling](screenshots/bottom-panel-setup-tiling.png)
