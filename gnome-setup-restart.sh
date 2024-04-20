@@ -166,7 +166,7 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 echo 'setting up some custom tweaks (via dconf)...'
 dconf write /ca/desrt/dconf-editor/show-warning false
 dconf write /net/sapples/LiveCaptions/save-history false
-dconf write /org/gnome/desktop/interface/clock-format "'24h'"
+dconf write /org/gnome/desktop/interface/clock-format "'12h'"
 dconf write /org/gnome/desktop/interface/clock-show-date true
 dconf write /org/gnome/desktop/interface/clock-show-seconds true
 dconf write /org/gnome/desktop/interface/clock-show-weekday true
